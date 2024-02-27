@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+
+</head>
+
+<body>
+  <a-scene>
+    <!-- World Setup -->
+    <a-sky color="#ECECEC"></a-sky>
+    <!-- Floor -->
+    <a-entity position="0 0 0">
+      <a-plane rotation="-90 0 0" width="30" height="30" src="Grass.jpg" repeat="20 20" shadow="receive: true;" material="roughness: 0.9; shininess: 20; specular: #359D16;"></a-plane>
+      <!-- Road -->
+      <a-entity>
+        <a-box width="30" height="0.05" depth="5" src="Road.avif" repeat="20 7" shadow="receive: true;" material="roughness: 1; shininess: 0; specular: #010101;"></a-box>
+        <!-- Dotted lines -->
+        <a-box position="15 0 0" width="2" height="0.06" depth="0.5" color="#EEEEEE" shadow="receive: true;"></a-box>
+        <a-box position="12 0 0" width="2" height="0.06" depth="0.5" color="#EEEEEE" shadow="receive: true;"></a-box>
+        <a-box position="9 0 0" width="2" height="0.06" depth="0.5" color="#EEEEEE" shadow="receive: true;"></a-box>
+        <a-box position="6 0 0" width="2" height="0.06" depth="0.5" color="#EEEEEE" shadow="receive: true;"></a-box>
+        <a-box position="3 0 0" width="2" height="0.06" depth="0.5" color="#EEEEEE" shadow="receive: true;"></a-box>
+        <a-box position="-15 0 0" width="2" height="0.06" depth="0.5" color="#EEEEEE" shadow="receive: true;"></a-box>
+        <a-box position="-12 0 0" width="2" height="0.06" depth="0.5" color="#EEEEEE" shadow="receive: true;"></a-box>
+        <a-box position="-9 0 0" width="2" height="0.06" depth="0.5" color="#EEEEEE" shadow="receive: true;"></a-box>
+        <a-box position="-6 0 0" width="2" height="0.06" depth="0.5" color="#EEEEEE" shadow="receive: true;"></a-box>
+        <a-box position="-3 0 0" width="2" height="0.06" depth="0.5" color="#EEEEEE" shadow="receive: true;"></a-box>
+        <a-box width="2" height="0.06" depth="0.5" color="#EEEEEE"></a-box>
+      </a-entity>
+      <!-- Sidewalk -->
+      <a-entity position="0 0.1 3.25">
+        <a-box width="30" height="0.2" depth="1.5" src="Sidewalk.jpg" repeat="20 1" material="roughness: 1; shininess: 0; specular: #010101;"></a-box>
+      </a-entity>
+      <a-entity position="0 0.1 -3.25">
+        <a-box width="30" height="0.2" depth="1.5" src="Sidewalk.jpg" repeat="20 1" material="roughness: 1; shininess: 0; specular: #010101;"></a-box>
+      </a-entity>
+    </a-entity>
+
+    <!-- User -->
+    <a-camera position="0 1.6 5"></a-camera>
+
+    <!-- Car -->
+    <a-entity wireframe="true" position="0 1 0" width="4" height="2" depth="2">
+      <!-- Frame -->
+      <a-entity position="0 0 0">
+        <!-- Windows -->
+        <a-box position="-0.7 0.6 0" width="0.75" height="0.6" depth="1.9" color="#4CC3D944" opacity="0.5" shadow="receive: true;" material="roughness: 0.2; shininess: 30; specular: #111111;">
+        </a-box>
+        <a-box position="0.7 0.6 0" width="0.75" height="0.6" depth="1.9" color="#4CC3D944" opacity="0.5" shadow="receive: true;" material="roughness: 0.2; shininess: 30; specular: #111111;">
+        </a-box>
+        <a-box position="-0.5 0.7 0" width="0.75" height="0.5" depth="2.1" color="#4CC3D944" opacity="0.5" shadow="receive: true;" material="roughness: 0.2; shininess: 30; specular: #111111;">
+        </a-box>
+        <a-box position="0.5 0.7 0" width="0.75" height="0.5" depth="2.1" color="#4CC3D944" opacity="0.5" shadow="receive: true;" material="roughness: 0.2; shininess: 30; specular: #111111;">
+        </a-box>
+        <!-- Car Body -->
+        <a-box position="0 0.5 0" width="2" depth="1.95" src="Blue Car Paint.jpg" repeat="3 1" shadow="receive: true;" material="roughness: 0.6; shininess: 30; specular: #010131;"></a-box>
+        <a-box position="0 -0.125 0" width="4" height="0.75" depth="2" src="Blue Car Paint.jpg" repeat="6 1" shadow="receive: true;" material="roughness: 0.6; shininess: 30; specular: #010131;"></a-box>
+        <!-- Bumper -->
+        <a-box position="0 -0.4 0" width="4.03" height="0.2" depth="2.03" src="Bumper.jpg" repeat="6 1" shadow="receive: true;" material="metalness: 0.3; roughness:0.8;"></a-box>
+        <!-- License plate -->
+        <a-box position="-2 -0.35 0" width="0.1" height="0.3" depth="0.7" color="#CCCCDD" shadow="receive: true;" material="metalness: 0.1; roughness:0.5;"></a-box>
+        <a-box position="2 -0.35 0" width="0.1" height="0.3" depth="0.7" color="#CCCCDD" shadow="receive: true;" material="metalness: 0.1; roughness:0.5;"></a-box>
+      </a-entity>
+      <!-- Wheels -->
+      <a-entity position="1 -0.6 0">
+        <!-- Actual Wheels -->
+        <a-cylinder position="0 0 0.9" rotation="90 0 0" radius="0.4" height="0.25" src="Car Wheel.jpg" shadow="receive: true;"></a-cylinder>
+        <a-cylinder position="0 0 -0.9" rotation="90 0 0" radius="0.4" height="0.25" src="Car Wheel.jpg" shadow="receive: true;"></a-cylinder>
+        <!-- Axle -->
+        <a-cylinder position="0 0 0" rotation="90 0 0" radius="0.1" height="1.8" color="#000000" shadow="receive: true;"></a-cylinder>
+      </a-entity>
+      <a-entity position="-1 -0.6 0">
+        <!-- Actual Wheels -->
+        <a-cylinder position="0 0 0.9" rotation="90 0 0" radius="0.4" height="0.25" src="Car Wheel.jpg" shadow="receive: true;"></a-cylinder>
+        <a-cylinder position="0 0 -0.9" rotation="90 0 0" radius="0.4" height="0.25" src="Car Wheel.jpg" shadow="receive: true;"></a-cylinder>
+        <!-- Axle -->
+        <a-cylinder position="0 0 0" rotation="90 0 0" radius="0.1" height="1.8" color="#000000" shadow="receive: true;"></a-cylinder>
+      </a-entity>
+      <!-- Lights -->
+      <!-- Taillight -->
+      <a-entity position="2 0 0">
+        <a-sphere position="0 0 -0.6" radius="0.15" color="#EF2D5E" emissive="#900" scale="1 1 1.5"></a-sphere>
+        <a-sphere position="0 0 0.6" radius="0.15" color="#EF2D5E" emissive="#900" scale="1 1 1.5"></a-sphere>
+      </a-entity>
+      <!-- Headlight -->
+      <a-entity position="-2 0 0">
+        <a-sphere position="0 0 -0.6" radius="0.15" color="#FFFFFF" emissive="#CCC" scale="1 1 1.5"></a-sphere>
+        <a-sphere position="0 0 0.6" radius="0.15" color="#FFFFFF" emissive="#CCC" scale="1 1 1.5"></a-sphere>
+      </a-entity>
+    </a-entity>
+
+    
+  </a-scene>
+</body>
+
+</html>
